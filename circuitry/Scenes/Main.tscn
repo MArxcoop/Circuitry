@@ -1,10 +1,11 @@
 [gd_scene format=4 uid="uid://cr1g02ojhlv8k"]
 
-[ext_resource type="Texture2D" uid="uid://q3wdsei0glg2" path="res://Tile.png" id="1_uu6xs"]
-[ext_resource type="Script" uid="uid://dpge7jvhgfi3i" path="res://camera_2d.gd" id="2_r0du0"]
+[ext_resource type="Texture2D" uid="uid://q3wdsei0glg2" path="res://Assets/Tile.png" id="1_idj7w"]
+[ext_resource type="Script" uid="uid://dpge7jvhgfi3i" path="res://Scripts/camera_2d.gd" id="2_kln2b"]
+[ext_resource type="PackedScene" uid="uid://b8xcg7fb8v2ra" path="res://Scenes/wire_path.tscn" id="3_kln2b"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cm0pq"]
-texture = ExtResource("1_uu6xs")
+texture = ExtResource("1_idj7w")
 texture_region_size = Vector2i(128, 128)
 0:0/0 = 0
 
@@ -19,4 +20,6 @@ tile_map_data = PackedByteArray("AAD//wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAA
 tile_set = SubResource("TileSet_pjvof")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=396175479]
-script = ExtResource("2_r0du0")
+script = ExtResource("2_kln2b")
+
+[node name="Wire Path" parent="." unique_id=1175483005 instance=ExtResource("3_kln2b")]

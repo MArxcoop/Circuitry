@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://b8xcg7fb8v2ra"]
 
 [ext_resource type="Script" uid="uid://ddn8mf3wuna6w" path="res://Scripts/wirePath.gd" id="1_rot1w"]
+[ext_resource type="PackedScene" uid="uid://c5qai6vtgmxda" path="res://Scenes/wireButton.tscn" id="2_u4rkd"]
 
 [sub_resource type="Curve2D" id="Curve2D_04rxf"]
 bake_interval = 0.01
@@ -10,3 +11,8 @@ curve = SubResource("Curve2D_04rxf")
 script = ExtResource("1_rot1w")
 
 [node name="Line2D" type="Line2D" parent="." unique_id=321624479]
+
+[node name="wireButton" parent="." unique_id=1758901758 instance=ExtResource("2_u4rkd")]
+visible = false
+
+[connection signal="pressed" from="wireButton" to="." method="_on_wire_button_pressed"]

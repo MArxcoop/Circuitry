@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://q3wdsei0glg2" path="res://Assets/Tile.png" id="1_idj7w"]
 [ext_resource type="Script" uid="uid://dpge7jvhgfi3i" path="res://Scripts/camera_2d.gd" id="2_kln2b"]
-[ext_resource type="PackedScene" uid="uid://b8xcg7fb8v2ra" path="res://Scenes/wirePath.tscn" id="3_kln2b"]
+[ext_resource type="PackedScene" uid="uid://b8xcg7fb8v2ra" path="res://Scenes/wire_path.tscn" id="3_kln2b"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cm0pq"]
 texture = ExtResource("1_idj7w")
@@ -12,9 +12,6 @@ texture_region_size = Vector2i(128, 128)
 [sub_resource type="TileSet" id="TileSet_pjvof"]
 tile_size = Vector2i(128, 128)
 sources/0 = SubResource("TileSetAtlasSource_cm0pq")
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_232hy"]
-size = Vector2(767, 514)
 
 [node name="Node2D" type="Node2D" unique_id=1405643164]
 
@@ -26,20 +23,3 @@ tile_set = SubResource("TileSet_pjvof")
 script = ExtResource("2_kln2b")
 
 [node name="Wire Path" parent="." unique_id=1175483005 instance=ExtResource("3_kln2b")]
-
-[node name="wiringButton" type="CheckButton" parent="." unique_id=925902026]
-offset_left = -106.0
-offset_top = 293.0
-offset_right = -3.0
-offset_bottom = 324.0
-text = "Wiring "
-
-[node name="placementArea" type="Area2D" parent="." unique_id=402992922 groups=["Placement Area"]]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="placementArea" unique_id=1455009419]
-position = Vector2(0.5, 0)
-shape = SubResource("RectangleShape2D_232hy")
-
-[connection signal="toggled" from="wiringButton" to="Wire Path" method="_on_check_button_toggled"]
-[connection signal="mouse_entered" from="placementArea" to="Wire Path" method="_on_placement_area_mouse_entered"]
-[connection signal="mouse_exited" from="placementArea" to="Wire Path" method="_on_placement_area_mouse_exited"]

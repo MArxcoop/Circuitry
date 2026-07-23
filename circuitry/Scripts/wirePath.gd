@@ -21,16 +21,16 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 
+
 func _input(event: InputEvent) -> void:
 	if Input.is_action_just_pressed("leftMouseButton") and toggle and mouseInArea:
-		var pos = get_global_mouse_position()
-		line.add_point(get_global_mouse_position())
+		var pos = Global.getSnapMousePos()
+		line.add_point(Global.getSnapMousePos())
 		pointPosition = line.get_point_position(pointCount)
 		points.append(pos)
 		queue_redraw()
-		
 		pointCount += 1
-		
+
 
 func _draw() -> void:
 	for pos in points:
